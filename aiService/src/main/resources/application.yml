@@ -1,0 +1,35 @@
+server :
+  port : 8093
+spring :
+  application :
+    name : aiService
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+  data:
+    mongodb:
+      # Change 'mongo' to 'mongodb' below
+      uri: mongodb://localhost:27017/aidatabase
+      database: aidatabase
+eureka :
+  client :
+    service-url :
+      defaultZone : http://localhost:8761/eureka
+
+
+rabbitmq:
+  exchange :
+    name : fitness.exchange
+  queue :
+    name : activity.queue
+  routing :
+    key : activity.tracking
+
+gemini :
+  api :
+    url : ${GEMINI_API_URL}
+    key : ${GEMINI_API_KEY}
